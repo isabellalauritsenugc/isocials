@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#CC0000"/>
+  <text
+    x="200" y="215"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="88"
+    font-weight="bold"
+    font-style="italic"
+    fill="white"
+    text-anchor="middle"
+    letter-spacing="-2">Colgate</text>
+  <path
+    d="M 108 248 Q 200 310 292 248"
+    stroke="white" stroke-width="14" fill="none" stroke-linecap="round"/>
+</svg>
