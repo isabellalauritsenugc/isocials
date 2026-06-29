@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=870" />
+  <title>Isabella Lauritsen | iSocials UGC</title>
+  <meta name="description" content="UGC creator helping brands build trust with authentic content. 4M+ TikTok ad views, 85% client retention, 20+ brand collaborations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────── */
+    :root {
+      --cream:  #F2F5F9;
+      --warm:   #E4EBF4;
+      --sand:   #BACAD9;
+      --muted:  #7A93AA;
+      --dark:   #1C2B3A;
+      --accent: #4A7499;
+      --white:  #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'Inter', system-ui, sans-serif;
+      --max-w: 1140px;
+      --gutter: clamp(1.25rem, 5vw, 4rem);
+
+      /* Typographic scale */
+      --t-display:  clamp(2.494rem, 4.99vw, 3.99rem);    /* hero name */
+      --t-heading:  clamp(2.375rem, 4.75vw, 3.8rem);    /* section headings */
+      --t-subhead:  clamp(1.15rem, 2.5vw, 1.6rem);/* tagline */
+      --t-body:     1rem;                          /* body copy */
+      --t-small:    0.82rem;                       /* secondary text */
+      --t-label:    0.82rem;                       /* uppercase labels */
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── LANGUAGE ────────────────────────────────────── */
+    body [data-lang="da"] { display: none; }
+    body.lang-da [data-lang="en"] { display: none; }
+    body.lang-da [data-lang="da"] { display: revert; }
+
+    /* ── NAV ─────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem var(--gutter);
+      background: rgba(247,243,238,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s;
+    }
+    nav.scrolled { border-color: var(--sand); }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.2rem; letter-spacing: .04em; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); transition: color .2s; }
+    .nav-links a:hover { color: var(--dark); }
+    .lang-switch { display: flex; gap: .4rem; font-size: .75rem; letter-spacing: .08em; }
+    .lang-btn { background: none; border: none; cursor: pointer; color: var(--muted); padding: .15rem .35rem; font-family: var(--font-sans); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; transition: color .2s; }
+    .lang-btn.active { color: var(--dark); border-bottom: 1px solid var(--dark); }
+    .nav-right { display: flex; align-items: center; gap: 2rem; }
+    @media (max-width: 940px) {
+      .nav-links { gap: 0.65rem; }
+      .nav-links a { font-size: .57rem; letter-spacing: .04em; }
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    #hero {
+      display: grid;
+      grid-template-columns: 1fr 0.855fr;
+      align-items: stretch;
+      gap: 3.8rem;
+      padding: 7.6rem var(--gutter) 4.75rem;
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    @media (max-width: 860px) { #hero { grid-template-columns: 1fr; padding-top: 6rem; } }
+
+    .hero-text {}
+    .hero-eyebrow {
+      font-family: var(--font-sans);
+      font-size: var(--t-label); letter-spacing: .16em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.5rem;
+    }
+    .hero-name {
+      font-family: var(--font-serif);
+      font-size: var(--t-display);
+      font-weight: 500; line-height: 1.0;
+      margin-bottom: .5rem;
+    }
+    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: var(--t-subhead);
+      font-weight: 300; color: var(--muted);
+      margin-bottom: 1.75rem; line-height: 1.4;
+    }
+    .hero-body {
+      font-family: var(--font-sans);
+      font-size: var(--t-body); color: var(--muted); line-height: 1.8;
+      max-width: 460px; margin-bottom: 2.5rem;
+    }
+
+    /* Stats grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .75rem;
+      margin-bottom: 2.5rem;
+    }
+    .stat-card {
+      background: var(--warm);
+      border-radius: 4px;
+      padding: 1rem 1.1rem;
+    }
+    .stat-card.highlight { background: var(--dark); }
+    .stat-number {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 400; line-height: 1;
+      color: var(--dark);
+    }
+    .stat-card.highlight .stat-number { color: var(--cream); }
+    .stat-label {
+      font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); margin-top: .3rem;
+    }
+    .stat-card.highlight .stat-label { color: var(--sand); }
+
+    /* Social links */
+    .hero-social { display: flex; gap: 1.25rem; }
+    .hero-social a {
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); border-bottom: 1px solid var(--sand);
+      padding-bottom: .1rem; transition: color .2s, border-color .2s;
+    }
+    .hero-social a:hover { color: var(--dark); border-color: var(--dark); }
+
+    /* Hero image */
+    .hero-image-wrap {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--warm);
+    }
+    .hero-image-wrap img, .hero-image-wrap video { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+    .hero-image-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: var(--muted); gap: .75rem;
+    }
+    .hero-image-placeholder span { font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; }
+    @media (max-width: 860px) { .hero-image-wrap { order: -1; border-radius: 4px; } }
+
+    /* ── DIVIDER ──────────────────────────────────────── */
+    .divider { height: 1px; background: var(--sand); max-width: var(--max-w); margin: 0 auto; }
+    .divider-full { height: 1px; background: var(--sand); }
+
+    /* ── SECTION WRAPPER ──────────────────────────────── */
+    .section {
+      padding: 5.25rem var(--gutter);
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .section-sm { padding: 3.8rem var(--gutter); max-width: var(--max-w); margin: 0 auto; }
+    .section-full { padding: 5.25rem var(--gutter); }
+
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: var(--t-label); letter-spacing: .18em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 1.1rem;
+    }
+    .section-heading {
+      font-family: var(--font-serif);
+      font-size: var(--t-heading);
+      font-weight: 500; line-height: 1.15; margin-bottom: 1.1rem;
+    }
+    .section-heading em { font-style: italic; font-weight: 500; color: var(--accent); }
+    .section-body {
+      font-family: var(--font-sans);
+      font-size: var(--t-body); color: var(--muted); line-height: 1.85; max-width: 600px;
+    }
+
+    /* ── FADE IN ──────────────────────────────────────── */
+    .fade { opacity: 0; transform: translateY(18px); transition: opacity .65s ease, transform .65s ease; }
+    .fade.visible { opacity: 1; transform: none; }
+
+    /* ── BRANDS SECTION ─────────────────────────────────── */
+    #brands { background: transparent; padding: 0 var(--gutter); }
+    #brands .inner { max-width: var(--max-w); margin: 0 auto; padding: 4rem var(--gutter) 5rem; background: #4A7499; border-radius: 12px; }
+
+    .brands-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 3rem;
+      align-items: stretch;
+    }
+    .brands-left {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (max-width: 800px) { .brands-layout { grid-template-columns: 1fr; } }
+
+    /* Left: heading + logos */
+    #brands .section-label { color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; }
+    #brands .section-heading { color: white; margin-bottom: 1.5rem; }
+    #brands .section-heading em { color: rgba(255,255,255,0.75); }
+
+    /* Logo circles */
+    .brands-logo-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      flex: 1;
+      align-content: space-between;
+    }
+    @media (max-width: 600px) { .brands-logo-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .brand-card {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform .3s ease;
+      background: white;
+    }
+    .brand-card:hover { transform: scale(1.06); }
+    .brand-card img {
+      width: 130%;
+      height: 130%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Right: retention heading + stats */
+    .brands-right { display: flex; flex-direction: column; gap: 1.25rem; padding-top: clamp(5rem, 9vw, 7.5rem); }
+
+    .retention-heading { line-height: 1; margin-bottom: 0.5rem; }
+    .retention-heading div { line-height: 1; }
+    .retention-heading em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: var(--t-heading);
+      color: rgba(255,255,255,0.75);
+      display: block;
+      font-weight: 400;
+    }
+    .retention-heading strong {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      color: white;
+      text-transform: none;
+      letter-spacing: 0;
+      display: block;
+      line-height: 0.95;
+      margin-bottom: 1.25rem;
+    }
+
+    .retention-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 1rem; margin-top: 0; }
+    .retention-item { display: flex; flex-direction: column; align-items: flex-start; text-align: left; gap: 1rem; }
+    .retention-ring-wrap { position: relative; width: 130px; height: 130px; flex-shrink: 0; }
+    .retention-ring-wrap svg { width: 130px; height: 130px; transform: rotate(-90deg); }
+    .ring-bg { fill: none; stroke: rgba(255,255,255,0.25); stroke-width: 5; }
+    .ring-fg {
+      fill: none; stroke-width: 5; stroke-linecap: round;
+      stroke-dasharray: 220; stroke-dashoffset: 220;
+      transition: stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1);
+    }
+    .ring-fg.dark-ring { stroke: white; }
+    .ring-fg.accent-ring { stroke: rgba(255,255,255,0.65); }
+    .retention-ring-wrap.animated .ring-fg { stroke-dashoffset: 0; }
+    .ring-label {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-size: 1.8rem; font-weight: 500;
+      color: white;
+    }
+    .retention-text { font-family: var(--font-sans); font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.65; }
+    .retention-text strong { color: white; font-weight: 600; }
+
+    /* ── VIDEO SECTIONS ───────────────────────────────── */
+    #videos .section { padding-bottom: 1.5rem; }
+    .video-section { padding: 2rem var(--gutter) 0; max-width: var(--max-w); margin: 0 auto; }
+    .video-section:last-of-type { padding-bottom: 5rem; }
+
+    .vs-header {
+      margin-bottom: 2rem;
+    }
+    .vs-brand-name {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.1;
+      margin-bottom: .4rem;
+    }
+    .vs-brand-name--xl {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+    .vs-count { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) { .video-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 500px) { .video-grid { grid-template-columns: repeat(2, 1fr); gap: .6rem; } }
+
+    .video-card {
+      position: relative;
+      aspect-ratio: 9/16;
+      background: var(--warm);
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .video-card video,
+    .video-card iframe {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      border: none;
+      display: block;
+    }
+    .video-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: .75rem; color: var(--muted);
+    }
+    .video-placeholder svg { opacity: .3; }
+    .video-placeholder-label { font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; }
+    .video-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(44,40,32,.55) 0%, transparent 55%);
+      opacity: 0; transition: opacity .3s;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: .85rem .9rem;
+    }
+    .video-card:hover .video-overlay { opacity: 1; }
+    .video-meta-brand { font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.7); }
+    .video-meta-type { font-size: .78rem; font-weight: 400; color: #fff; }
+
+    /* Play / mute controls */
+    .video-play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 54px; height: 54px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%; border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 3;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+      transition: transform .2s, opacity .25s;
+    }
+    .video-play-btn:hover { transform: translate(-50%,-50%) scale(1.1); }
+    .video-card.playing .video-play-btn { opacity: 0; pointer-events: none; }
+    .video-card.playing:hover .video-play-btn { opacity: 1; pointer-events: auto; }
+
+    .video-mute-btn {
+      position: absolute; bottom: .65rem; left: .65rem;
+      width: 30px; height: 30px;
+      background: rgba(0,0,0,0.52);
+      border-radius: 50%; border: none;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 4;
+      opacity: 0; transition: opacity .2s;
+    }
+    .video-card.playing .video-mute-btn { opacity: 1; }
+    .video-mute-btn:hover { background: rgba(0,0,0,0.72); }
+    /* Hide controls on placeholder cards (no video yet) */
+    .video-card:has(.video-placeholder) .video-play-btn,
+    .video-card:has(.video-placeholder) .video-mute-btn { display: none; }
+    .video-mute-btn:hover { background: rgba(0,0,0,0.72); }
+
+    .video-section-divider { height: 1px; background: var(--sand); max-width: var(--max-w); margin: 3.5rem auto 0; }
+
+    /* ── CASE STUDIES ─────────────────────────────────── */
+    #cases { background: transparent; }
+    #cases .inner { background: var(--warm); border-radius: 12px; }
+    #cases .inner { max-width: var(--max-w); margin: 0 auto; padding: 5.5rem var(--gutter); }
+    #cases .section-label { color: var(--muted); }
+    #cases .cases-heading { margin-bottom: 3.5rem; line-height: 1; }
+    #cases .cases-heading .cases-script { font-family: var(--font-serif); font-style: italic; font-size: clamp(3.5rem, 7vw, 6rem); color: var(--dark); display: block; line-height: 1; }
+    #cases .cases-heading .cases-bold { font-family: var(--font-serif); font-weight: 500; font-size: clamp(3rem, 6.5vw, 5.5rem); color: var(--dark); text-transform: uppercase; letter-spacing: 0.12em; display: block; line-height: 0.9; }
+
+    .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3.5rem; }
+    @media (max-width: 760px) { .cases-grid { grid-template-columns: 1fr; } }
+
+    .case-card {
+      background: #4A7499;
+      border: none;
+      border-radius: 6px; padding: 2.5rem;
+    }
+    .case-client {
+      font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+      color: rgba(255,255,255,0.6); margin-bottom: 1rem;
+    }
+    .case-title {
+      font-family: var(--font-serif);
+      font-size: 1.75rem; font-weight: 500; color: white;
+      line-height: 1.3; margin-bottom: 1.25rem;
+    }
+    .case-description { font-family: var(--font-sans); font-size: var(--t-body); color: rgba(255,255,255,.65); line-height: 1.8; margin-bottom: 1.75rem; }
+    .case-results { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 1.75rem; }
+    .case-result {
+      display: flex; align-items: center; gap: .75rem;
+      font-family: var(--font-sans); font-size: var(--t-small); color: white;
+    }
+    .case-result::before {
+      content: ''; display: block;
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,0.7); flex-shrink: 0;
+    }
+    .case-feedback {
+      margin-top: 1.5rem;
+      background: white;
+      border-radius: 16px 16px 16px 4px;
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-serif);
+      font-style: italic; font-size: 1rem;
+      color: var(--dark); line-height: 1.65;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+      position: relative;
+    }
+    .case-feedback span {
+      color: var(--muted) !important;
+      opacity: 1 !important;
+    }
+
+    /* ── PHOTOS ────────────────────────────────────────── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: .75rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 900px) { .photo-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 500px) { .photo-grid { grid-template-columns: repeat(2, 1fr); } }
+    .photo-card { aspect-ratio: 4/5; background: var(--warm); border-radius: 6px; overflow: hidden; }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .photo-card:hover img { transform: scale(1.04); }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+    }
+
+    /* ── WHY UGC ───────────────────────────────────────── */
+    #why { background: var(--cream); }
+    #why .inner { max-width: var(--max-w); margin: 0 auto; padding: 5.5rem var(--gutter); }
+
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    @media (max-width: 760px) { .why-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .why-image-wrap { position: relative; overflow: hidden; border-radius: 12px; }
+    .why-image-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px; }
+    .why-image-wrap { opacity: 0; transform: translateX(-40px); transition: opacity .8s ease, transform .8s ease; }
+    .why-image-wrap.visible { opacity: 1; transform: none; }
+
+    .why-reasons { display: flex; flex-direction: column; gap: 1.75rem; margin-top: 2.5rem; }
+    .why-reason {}
+    .why-reason-title {
+      font-family: var(--font-serif); font-size: 1.35rem; font-weight: 500;
+      color: var(--dark); margin-bottom: .4rem;
+    }
+    .why-reason-body { font-family: var(--font-sans); font-size: var(--t-body); color: var(--muted); line-height: 1.75; }
+
+    /* ── WORK WITH ME ─────────────────────────────────── */
+    .process-intro { text-align: center; max-width: 640px; margin: 0 auto; }
+    .process-steps-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; margin-top: 3rem; background: var(--accent); border-radius: 12px; padding: 2.5rem; }
+    .process-steps-row .process-step { padding: 0 2rem; border-right: 1px solid rgba(255,255,255,0.2); }
+    .process-steps-row .process-step:first-child { padding-left: 0; }
+    .process-steps-row .process-step:last-child { border-right: none; }
+    .process-steps-row .step-num { color: white; }
+    .process-steps-row .step-circle circle { stroke: rgba(255,255,255,0.6); }
+    .process-steps-row .step-title { color: white; }
+    .process-steps-row .step-body { color: rgba(255,255,255,0.75); }
+    .process-bottom { margin-top: 1.75rem; display: flex; justify-content: center; }
+    .work-quote { padding: 1.25rem 1.75rem; background: white; border-radius: 16px 16px 16px 4px; box-shadow: 0 2px 16px rgba(0,0,0,0.10); max-width: 420px; text-align: left; }
+    .work-quote p { font-family: var(--font-serif); font-style: italic; font-size: 1.05rem; color: var(--dark); line-height: 1.6; margin: 0; }
+    .work-quote-name { font-family: var(--font-sans); font-size: .78rem; color: var(--muted); margin-top: .75rem !important; letter-spacing: 0.04em; }
+    .contact-video-wrap { border-radius: 12px; overflow: hidden; margin: 0.5rem auto 0; aspect-ratio: 4/5; width: 300px; }
+    .contact-video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 12px; }
+    @media (max-width: 700px) { .process-steps-row { grid-template-columns: 1fr; gap: 2rem; } .contact-video-wrap { width: 100%; max-width: 300px; } }
+    .process-step {}
+    .step-num-wrap { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 72px; margin-bottom: .85rem; }
+    .step-num { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 300; color: var(--dark); line-height: 1; }
+    .step-circle { position: absolute; top: 0; left: 0; width: 72px; height: 72px; transform: rotate(-90deg); pointer-events: none; }
+    .step-circle circle { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 213; stroke-dashoffset: 213; transition: stroke-dashoffset 0.65s cubic-bezier(.4,0,.2,1); }
+    .step-circle.drawn circle { stroke-dashoffset: 0; }
+    .step-title { font-family: var(--font-serif); font-size: 1.45rem; font-weight: 500; color: var(--dark); margin-bottom: .6rem; }
+    .step-body { font-family: var(--font-sans); font-size: var(--t-body); color: var(--muted); line-height: 1.75; }
+
+
+    /* ── CONTACT ───────────────────────────────────────── */
+    #contact { text-align: center; }
+    #contact .section-heading { font-size: clamp(1.78rem, 3.56vw, 2.85rem); }
+    .contact-email {
+      display: inline-block;
+      font-family: var(--font-serif); font-size: 1.4rem; font-weight: 600;
+      color: var(--accent); border: 1.5px solid var(--accent);
+      border-radius: 100px; padding: 0.6rem 2rem;
+      margin-bottom: 1rem;
+      transition: color .2s, background .2s;
+    }
+    .contact-email:hover { color: white; background: var(--accent); }
+    .contact-socials { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-top: 1.25rem; }
+    .contact-socials a {
+      font-size: .72rem; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--muted); transition: color .2s;
+      border-bottom: 1px solid currentColor; padding-bottom: 0.1rem;
+    }
+    .contact-socials a:hover { color: var(--dark); }
+
+    /* ── CASE VIDEO THUMBS ───────────────────────────── */
+    .case-videos {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: .75rem; margin-bottom: 1.75rem;
+    }
+    .case-video-thumb {
+      display: flex; flex-direction: column; gap: .5rem;
+      text-decoration: none;
+    }
+    .cvt-placeholder {
+      aspect-ratio: 9/16;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.4);
+      transition: background .2s, border-color .2s;
+      overflow: hidden;
+    }
+    .cvt-placeholder video {
+      width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block;
+    }
+    .case-video-thumb:hover .cvt-placeholder {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.3);
+      color: rgba(255,255,255,.8);
+    }
+    .case-video-thumb span {
+      font-size: .65rem; letter-spacing: .08em; text-transform: uppercase;
+      color: rgba(237,230,218,.45); text-align: center;
+    }
+
+    .cvt-live { position: relative; }
+    .cvt-play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.9); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity .2s, transform .2s;
+      z-index: 2;
+    }
+    .cvt-play-btn:hover { transform: translate(-50%,-50%) scale(1.1); }
+    .cvt-live.playing .cvt-play-btn { opacity: 0; pointer-events: none; }
+    .cvt-live.playing:hover .cvt-play-btn { opacity: 1; pointer-events: auto; }
+    .cvt-mute-btn {
+      position: absolute; bottom: 8px; right: 8px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(0,0,0,0.55); border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity .2s;
+      z-index: 2;
+    }
+    .cvt-live.playing .cvt-mute-btn { opacity: 1; }
+    .cvt-mute-btn:hover { background: rgba(0,0,0,0.75); }
+
+    /* ── TESTIMONIALS ─────────────────────────────────── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 700px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+    .tcard {
+      background: var(--warm);
+      border-radius: 6px;
+      padding: 1.4rem 1.75rem;
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease, box-shadow .3s ease;
+    }
+    .tcard.visible {
+      opacity: 1;
+      transform: none;
+    }
+    .tcard:hover {
+      box-shadow: 0 8px 32px rgba(74,116,153,0.13);
+      transform: translateY(-3px);
+    }
+    .tcard-short {
+      background: var(--cream);
+      border: 1px solid var(--sand);
+      padding: 1.5rem 1.75rem;
+    }
+    .tcard-quote {
+      font-family: var(--font-serif);
+      font-size: 0.92rem;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    .tcard-short .tcard-quote {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    /* ── FOOTER ────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--sand);
+      padding: 1.75rem var(--gutter);
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: var(--max-w); margin: 0 auto;
+    }
+    .footer-copy { font-size: .72rem; color: var(--muted); }
+    .footer-brand { font-family: var(--font-serif); font-size: .95rem; color: var(--muted); }
+
+    /* ── MOBILE (max 768px) ────────────────────────────── */
+    @media (max-width: 768px) {
+
+      /* Shrink display & heading scale for small screens */
+      :root {
+        --t-display: clamp(1.9rem, 8.5vw, 2.4rem);
+        --t-heading: clamp(1.85rem, 7.5vw, 2.25rem);
+      }
+
+      /* Section spacing */
+      .section      { padding: 3rem var(--gutter); }
+      .section-sm   { padding: 2.25rem var(--gutter); }
+      .section-full { padding: 3rem var(--gutter); }
+
+      /* Hero */
+      #hero         { padding: 5rem var(--gutter) 2.5rem; gap: 1.75rem; }
+      .hero-image-wrap { aspect-ratio: 4/5; max-height: 65vh; }
+      .hero-body    { max-width: 100%; margin-bottom: 1.5rem; }
+      .stats-grid   { gap: .5rem; }
+      .stat-card    { padding: .75rem .85rem; }
+      .hero-social  { flex-wrap: wrap; gap: .85rem; }
+
+      /* Brands card */
+      #brands .inner  { padding: 2.25rem 1.25rem 2.75rem; }
+      .brands-right   { padding-top: 1.5rem; }
+      .retention-stats { grid-template-columns: 1fr 1fr; gap: 1.25rem .75rem; }
+      .retention-ring-wrap,
+      .retention-ring-wrap svg { width: 100px; height: 100px; }
+      .ring-label   { font-size: 1.45rem; }
+      .retention-text { font-size: .9rem; }
+
+      /* Case video thumbnails inside brands */
+      .case-videos  { grid-template-columns: repeat(2, 1fr); }
+
+      /* Testimonial cards */
+      .tcard        { padding: 1.1rem 1.25rem; }
+
+      /* Contact */
+      #contact .section-heading { font-size: clamp(1.5rem, 7vw, 2rem); }
+      .contact-video-wrap       { width: 100%; max-width: 280px; }
+      .contact-socials          { gap: 1rem; }
+
+      /* Footer */
+      footer { flex-direction: column; gap: .65rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ────────────────────────────────────────────── -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">iSocials</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#videos"   data-lang="en">UGC Videos</a>    <a href="#videos"   data-lang="da">UGC Videoer</a></li>
+      <li><a href="#cases"    data-lang="en">Case studies</a><a href="#cases"  data-lang="da">Cases</a></li>
+      <li><a href="#testimonials" data-lang="en">Testimonials</a><a href="#testimonials" data-lang="da">Anbefalinger</a></li>
+      <li><a href="#photos"   data-lang="en">UGC Photos</a>    <a href="#photos"   data-lang="da">UGC Billeder</a></li>
+      <li><a href="#why"      data-lang="en">Why me?</a>   <a href="#why"      data-lang="da">Hvorfor mig?</a></li>
+      <li><a href="#work"     data-lang="en">Work with me</a><a href="#work"   data-lang="da">Sådan samarbejder vi</a></li>
+      <li><a href="#contact"  data-lang="en">Contact</a>   <a href="#contact"  data-lang="da">Kontakt</a></li>
+    </ul>
+    <div class="lang-switch">
+      <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <span style="color:var(--sand)">/</span>
+      <button class="lang-btn" id="btn-da" onclick="setLang('da')">DA</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────── -->
+<div id="hero" class="fade">
+
+  <div class="hero-text">
+
+    <!-- EN -->
+    <div data-lang="en">
+      <p class="hero-eyebrow">UGC Creator · iSocials</p>
+      <h1 class="hero-name">Meet <em>Isabella</em></h1>
+      <p class="hero-tagline">Content that actually performs.</p>
+      <p class="hero-body">Former elite athlete. Now creating UGC content that performs.<br><br>I combine authentic storytelling with platform strategy to create content that captures attention, builds trust, and drives action.<br><br>My goal is simple: To make your brand feel human through content people actually want to watch.</p>
+    </div>
+
+    <!-- DA -->
+    <div data-lang="da">
+      <p class="hero-eyebrow">UGC Creator · iSocials</p>
+      <h1 class="hero-name">Mød <em>Isabella</em></h1>
+      <p class="hero-tagline">Indhold der faktisk virker.</p>
+      <p class="hero-body">Tidligere eliteatlet. Nu skaber jeg UGC indhold, der performer.<br><br>Jeg kombinerer autentisk storytelling med en strategisk forståelse af sociale medier for at skabe content, der fanger opmærksomheden, skaber tillid og driver handling.<br><br>Mit mål er enkelt: At få jeres brand til at føles menneskeligt gennem indhold, som folk faktisk har lyst til at se.</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-grid" style="margin-top:2rem;">
+      <div class="stat-card highlight">
+        <div class="stat-number">11M+</div>
+        <div class="stat-label" data-lang="en">Views on a single video</div>
+        <div class="stat-label" data-lang="da">Samlede visninger på én video</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4M+</div>
+        <div class="stat-label" data-lang="en">TikTok ad views</div>
+        <div class="stat-label" data-lang="da">Visninger på TikTok-annoncer</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2.5M+</div>
+        <div class="stat-label" data-lang="en">Meta ad views</div>
+        <div class="stat-label" data-lang="da">Visninger på Meta-annoncer</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">85%</div>
+        <div class="stat-label" data-lang="en">Client retention rate</div>
+        <div class="stat-label" data-lang="da">Kunder der kommer tilbage</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">20+</div>
+        <div class="stat-label" data-lang="en">Brand partnerships</div>
+        <div class="stat-label" data-lang="da">Brands samarbejdet med</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">93%</div>
+        <div class="stat-label" data-lang="en">Client satisfaction</div>
+        <div class="stat-label" data-lang="da">Kundetilfredshed</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Portrait -->
+  <div style="display:flex; flex-direction:column; overflow:hidden;">
+    <div class="hero-image-wrap" style="flex: 0 0 88%; min-height:0; overflow:hidden;">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="assets/videos/isabella-hero.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-social" style="margin-top:1.25rem;">
+      <a href="https://www.tiktok.com/@someby_isabellalauritsen" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.instagram.com/i.socials_marketing" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/isabella-lauritsen-a47253332/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:contact@isocials.dk">Email</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<!-- ── BRAND COLLABS ──────────────────────────────────── -->
+<div id="brands">
+  <div class="inner fade">
+    <div class="brands-layout">
+
+      <!-- Left: heading + logos -->
+      <div class="brands-left">
+        <div data-lang="en">
+          <p class="section-label">Brands</p>
+          <h2 class="section-heading"><em>Brand</em> Collabs</h2>
+        </div>
+        <div data-lang="da">
+          <p class="section-label">Brands</p>
+          <h2 class="section-heading"><em>Samarbejdet</em> med</h2>
+        </div>
+        <div class="brands-logo-grid">
+      <div class="brand-card"><img src="assets/logos/alice-tech.png" alt="Alice.Tech" style="width:285%;height:285%;"></div>
+      <div class="brand-card"><img src="assets/logos/cewe.png" alt="CEWE" style="width:260%;height:260%;"></div>
+      <div class="brand-card"><img src="assets/logos/sanex.png" alt="Sanex" style="width:160%;height:160%;"></div>
+      <div class="brand-card"><img src="assets/logos/Colgate logo.png" alt="Colgate" style="width:180%;height:180%;"></div>
+      <div class="brand-card"><img src="assets/logos/mewalii.png" alt="Mewalii" style="width:170%;height:170%;"></div>
+      <div class="brand-card"><img src="assets/logos/jaafit.png" alt="Jaafit"></div>
+      <div class="brand-card"><img src="assets/logos/krifa.png" alt="Krifa"></div>
+      <div class="brand-card" style="background:url('assets/logos/ek-kobenhavn.png') 60% 45%/190% auto no-repeat, white;" title="EK København"></div>
+      <div class="brand-card"><img src="assets/logos/naillak.png" alt="Naillak"></div>
+      <div class="brand-card"><img src="assets/logos/vissevasse.png" alt="ViSSEVASSE" style="width:170%;height:170%;"></div>
+      <div class="brand-card"><img src="assets/logos/showerlabs.png" alt="Showerlabs" style="width:170%;height:170%;"></div>
+      <div class="brand-card"><img src="assets/logos/lilja-nordic.png" alt="Lilja Nordic"></div>
+      <div class="brand-card"><img src="assets/logos/dry-boots.png" alt="Dry Boots"></div>
+      <div class="brand-card"><img src="assets/logos/nordic-shower.png" alt="Nordic Shower" style="width:210%;height:210%;"></div>
+      <div class="brand-card"><img src="assets/logos/derma.png" alt="Derma"></div>
+      <div class="brand-card"><img src="assets/logos/the-travel-pack.png" alt="The Travel Pack"></div>
+      <div class="brand-card"><img src="assets/logos/rennoa.png" alt="Rennoa"></div>
+      <div class="brand-card"><img src="assets/logos/iciw.png" alt="ICIW" style="width:210%;height:210%;"></div>
+      <div class="brand-card"><img src="assets/logos/stepler.png" alt="Stepler" style="width:160%;height:160%;"></div>
+      <div class="brand-card"><img src="assets/logos/vellafit.png" alt="Vellafit"></div>
+      <div class="brand-card"><img src="assets/logos/yuaia-hair.png" alt="Yuaia HairCare" style="width:180%;height:180%;"></div>
+      <div class="brand-card"><img src="assets/logos/aras.png" alt="Aras"></div>
+      <div class="brand-card"><img src="assets/logos/garnier.png" alt="Garnier"></div>
+      <div class="brand-card"><img src="assets/logos/lush-beauty-bar.png" alt="Lush Beauty Bar" style="width:210%;height:210%;"></div>
+      <div class="brand-card"><img src="assets/logos/Logo.png" alt="Skatteguiden" style="width:160%;height:160%;"></div>
+    </div>
+      </div><!-- end brands-left -->
+
+      <!-- Right: retention stats -->
+      <div class="brands-right">
+        <div class="retention-heading">
+          <div data-lang="en"><em>Client</em><strong>Retention Rate</strong></div>
+          <div data-lang="da"><em>Tilbagevendende</em><strong>Kunder</strong></div>
+        </div>
+        <div class="retention-stats">
+          <div class="retention-item">
+            <div class="retention-ring-wrap" data-target="34.85">
+              <svg viewBox="0 0 80 80"><circle class="ring-bg" cx="40" cy="40" r="35"/><circle class="ring-fg dark-ring" cx="40" cy="40" r="35" data-pct="85"/></svg>
+              <div class="ring-label">85%</div>
+            </div>
+            <p class="retention-text" data-lang="en"><strong>85% of my clients</strong> choose to continue working together beyond the first collaboration.</p>
+            <p class="retention-text" data-lang="da"><strong>85% af mine kunder</strong> fortsætter samarbejdet efter første kampagne.</p>
+          </div>
+          <div class="retention-item">
+            <div class="retention-ring-wrap" data-target="37.62">
+              <svg viewBox="0 0 80 80"><circle class="ring-bg" cx="40" cy="40" r="35"/><circle class="ring-fg accent-ring" cx="40" cy="40" r="35" data-pct="93"/></svg>
+              <div class="ring-label">93%</div>
+            </div>
+            <p class="retention-text" data-lang="en"><strong>+90% report high satisfaction</strong> and continue using UGC as a core strategy.</p>
+            <p class="retention-text" data-lang="da"><strong>+90% rapporterer høj tilfredshed</strong> og bruger fortsat UGC som kernestrategi.</p>
+          </div>
+        </div>
+      </div><!-- end brands-right -->
+
+    </div><!-- end brands-layout -->
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ── UGC VIDEOS ─────────────────────────────────────── -->
+<div id="videos">
+  <div class="section fade">
+    <p class="section-label" data-lang="en">UGC Videos</p>
+    <p class="section-label" data-lang="da">UGC Videoer</p>
+    <h2 class="section-heading" data-lang="en">The <em>work</em></h2>
+    <h2 class="section-heading" data-lang="da">Se mit <em>arbejde</em></h2>
+    <p class="section-body" data-lang="en">A selection of my UGC videos blending authentic storytelling with platform strategy. Created to feel natural, build trust, and drive measurable results.</p>
+    <p class="section-body" data-lang="da">Et udvalg af mine UGC-videoer, hvor autentisk storytelling møder strategi. Skabt til at føles naturligt, opbygge tillid og skabe målbare resultater.</p>
+  </div>
+
+  <!-- CEWE -->
+  <div class="video-section fade" style="background: rgba(180, 20, 20, 0.12); border-radius: 12px; padding: 2rem var(--gutter);">
+    <div class="vs-header">
+      <p class="vs-brand-name vs-brand-name--xl">CEWE</p>
+      <p class="vs-count" data-lang="en">Long-term collaboration · TikTok + Meta</p>
+      <p class="vs-count" data-lang="da">Langsigtet samarbejde · TikTok + Meta</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/cewe-1.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">CEWE</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/cewe-2.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">CEWE</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/cewe-3.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">CEWE</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/cewe-4.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">CEWE</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-section-divider"></div>
+
+  <!-- THE TRAVEL PACK -->
+  <div class="video-section fade" style="background: rgba(15, 40, 90, 0.10); border-radius: 12px; padding: 2rem var(--gutter);">
+    <div class="vs-header">
+      <p class="vs-brand-name">The Travel Pack</p>
+      <p class="vs-count" data-lang="en">Meta ad UGC · Travel</p>
+      <p class="vs-count" data-lang="da">Meta annonce UGC · Rejse</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/travel-1.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">The Travel Pack</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/travel-2.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">The Travel Pack</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/travel-3.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">The Travel Pack</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/travel-4.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">The Travel Pack</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-section-divider"></div>
+
+  <!-- MEWALII -->
+  <div class="video-section fade" style="background: rgba(20, 80, 40, 0.10); border-radius: 12px; padding: 2rem var(--gutter);">
+    <div class="vs-header">
+      <p class="vs-brand-name">Mewalii</p>
+      <p class="vs-count" data-lang="en">Meta ad UGC · Personal Care</p>
+      <p class="vs-count" data-lang="da">Meta annonce UGC · Personal Care</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mewalii-3.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Mewalii</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mewalii-4.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Mewalii</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mewalii-1.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Mewalii</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mewalii-2.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Mewalii</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-section-divider"></div>
+
+  <!-- KRIFA -->
+  <div class="video-section fade" style="background: rgba(100, 40, 140, 0.10); border-radius: 12px; padding: 2rem var(--gutter);">
+    <div class="vs-header">
+      <p class="vs-brand-name">Krifa</p>
+      <p class="vs-count" data-lang="en">Meta ad UGC · Trade union</p>
+      <p class="vs-count" data-lang="da">Meta annonce UGC · Fagforening</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/krifa-1.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Krifa</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/krifa-2.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Krifa</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/krifa-3.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Krifa</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/krifa-4.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Krifa</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-section-divider"></div>
+
+  <!-- MIXED BRANDS -->
+  <div class="video-section fade" style="padding-bottom:5rem;">
+    <div class="vs-header">
+      <p class="vs-brand-name">Mixed <em>brands</em></p>
+      <p class="vs-count" data-lang="en">A selection across collaborations</p>
+      <p class="vs-count" data-lang="da">Et udvalg på tværs af samarbejder</p>
+    </div>
+    <div class="video-grid">
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mixed-1.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Naillak</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mixed-2.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Skatteguiden</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mixed-3.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">EK København</span></div>
+      </div>
+      <div class="video-card">
+        <button class="video-play-btn" aria-label="Play/Pause"></button>
+        <button class="video-mute-btn" aria-label="Lyd til/fra"></button>
+        <video src="assets/videos/mixed-4.mp4" loop playsinline preload="metadata"></video>
+        <div class="video-overlay"><span class="video-meta-brand">Lilja Nordic</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ── CASE STUDIES ──────────────────────────────────── -->
+<div id="cases">
+  <div class="inner fade">
+
+    <!-- EN -->
+    <div data-lang="en">
+      <p class="section-label">Case Studies</p>
+      <h2 class="section-heading" style="margin-bottom: 3.5rem;"><em>Results that</em> speak</h2>
+    </div>
+    <!-- DA -->
+    <div data-lang="da">
+      <p class="section-label">Cases</p>
+      <h2 class="section-heading" style="margin-bottom: 3.5rem;"><em>Fra idé til</em> virale resultater</h2>
+    </div>
+
+    <div class="cases-grid">
+
+      <!-- CEWE Case -->
+      <div class="case-card">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem;">
+          <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:white;flex-shrink:0;">
+            <img src="assets/logos/cewe.png" alt="CEWE" style="width:260%;height:260%;object-fit:cover;">
+          </div>
+          <p class="case-client" style="margin-bottom:0;">Long-term collaboration</p>
+        </div>
+        <h3 class="case-title" data-lang="en">UGC for paid social ads on TikTok &amp; Meta</h3>
+        <h3 class="case-title" data-lang="da">UGC til betalte annoncer på TikTok &amp; Meta</h3>
+        <p class="case-description" data-lang="en">A long-term partnership focused on creating authentic UGC that blends naturally into the feed while driving measurable results.</p>
+        <p class="case-description" data-lang="en">Over multiple campaigns, CEWE and I have developed a scalable content engine built around storytelling, testing, and platform-native creative designed for paid social performance.</p>
+        <p class="case-description" data-lang="da">Et langsigtet samarbejde med fokus på autentisk content, der føles naturligt på platformen og samtidig skaber målbare resultater.</p>
+        <p class="case-description" data-lang="da">Gennem flere kampagner har CEWE og jeg opbygget en skalerbar content-strategi baseret på storytelling, kreativ testning og platformstilpasset indhold til annoncering på sociale medier.</p>
+        <div class="case-results" data-lang="en">
+          <div class="case-result">4M+ TikTok ad views</div>
+          <div class="case-result">2.5M+ Meta ad views</div>
+          <div class="case-result">Content used across multiple campaigns and formats</div>
+          <div class="case-result">Ongoing partnership built on performance and trust</div>
+        </div>
+        <div class="case-results" data-lang="da">
+          <div class="case-result">4M+ visninger på TikTok-annoncer</div>
+          <div class="case-result">2.5M+ visninger på Meta-annoncer</div>
+          <div class="case-result">Indhold genbrugt på tværs af kampagner og formater</div>
+          <div class="case-result">Langvarigt samarbejde baseret på resultater</div>
+        </div>
+        <!-- Video previews — replace href with your actual TikTok/Instagram links -->
+        <div class="case-videos">
+          <div class="case-video-thumb">
+            <div class="cvt-placeholder cvt-live">
+              <video src="assets/videos/cewe-case-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <button class="cvt-play-btn" aria-label="Play/Pause"></button>
+              <button class="cvt-mute-btn" aria-label="Lyd til/fra"></button>
+            </div>
+          </div>
+          <div class="case-video-thumb">
+            <div class="cvt-placeholder cvt-live">
+              <video src="assets/videos/cewe-case-2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <button class="cvt-play-btn" aria-label="Play/Pause"></button>
+              <button class="cvt-mute-btn" aria-label="Lyd til/fra"></button>
+            </div>
+          </div>
+          <div class="case-video-thumb">
+            <div class="cvt-placeholder cvt-live">
+              <video src="assets/videos/cewe-case-3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <button class="cvt-play-btn" aria-label="Play/Pause"></button>
+              <button class="cvt-mute-btn" aria-label="Lyd til/fra"></button>
+            </div>
+          </div>
+        </div>
+        <div class="case-feedback" data-lang="en">"You are without comparison the best UGC creator we have worked with, and I am SO looking forward to 2026. It can only get better."<br/><span style="font-size:.75rem;font-style:normal;margin-top:.5rem;display:block;">Brand partner, long-term collaboration</span></div>
+        <div class="case-feedback" data-lang="da">"Du er uden sammenligning den bedste UGC-creator, vi har samarbejdet med, og jeg GLÆDER mig til 2026. Det kan kun blive godt."<br/><span style="font-size:.75rem;font-style:normal;margin-top:.5rem;display:block;">Brand partner, langsigtet samarbejde</span></div>
+      </div>
+
+      <!-- Sanex & Colgate Case -->
+      <div class="case-card">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem;">
+          <div style="display:flex; gap:0.4rem; align-items:center; flex-shrink:0;">
+            <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:white;">
+              <img src="assets/logos/sanex.png" alt="Sanex" style="width:160%;height:160%;object-fit:cover;">
+            </div>
+            <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:white;">
+              <img src="assets/logos/Colgate logo.png" alt="Colgate" style="width:180%;height:180%;object-fit:cover;">
+            </div>
+          </div>
+          <p class="case-client" style="margin-bottom:0;">Ongoing partnership</p>
+        </div>
+        <h3 class="case-title" data-lang="en">Organic UGC &amp; boosted social content</h3>
+        <h3 class="case-title" data-lang="da">Organisk UGC &amp; boosted socialmedie-indhold</h3>
+        <p class="case-description" data-lang="en">Ongoing collaboration creating UGC-style content for organic social, later boosted to extend reach. Built on relatable routines, credibility and natural product integration, leading to repeat collaborations continuing into 2026.</p>
+        <p class="case-description" data-lang="da">Løbende samarbejde med UGC-content til organisk sociale medier, efterfølgende boosted for øget rækkevidde. Bygget på relaterbare rutiner, troværdighed og naturlig produktintegration, med fortsatte samarbejder ind i 2026.</p>
+        <div class="case-results" data-lang="en">
+          <div class="case-result">Instagram: 140k+ views</div>
+          <div class="case-result">Repeat collaboration, continuing into 2026</div>
+          <div class="case-result">Content used across Sanex &amp; Colgate campaigns</div>
+        </div>
+        <div class="case-results" data-lang="da">
+          <div class="case-result">Instagram: 140k+ visninger</div>
+          <div class="case-result">Gentagent samarbejde, fortsætter ind i 2026</div>
+          <div class="case-result">Indhold brugt på tværs af Sanex &amp; Colgate kampagner</div>
+        </div>
+        <div class="case-videos">
+          <div class="case-video-thumb">
+            <div class="cvt-placeholder cvt-live">
+              <video src="assets/videos/sanex-case-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <button class="cvt-play-btn" aria-label="Play/Pause"></button>
+              <button class="cvt-mute-btn" aria-label="Lyd til/fra"></button>
+            </div>
+          </div>
+          <div class="case-video-thumb">
+            <div class="cvt-placeholder cvt-live">
+              <video src="assets/videos/sanex-case-2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <button class="cvt-play-btn" aria-label="Play/Pause"></button>
+              <button class="cvt-mute-btn" aria-label="Lyd til/fra"></button>
+            </div>
+          </div>
+          <div class="case-video-thumb">
+            <div class="cvt-placeholder cvt-live">
+              <video src="assets/videos/sanex-case-3.mp4" autoplay muted loop playsinline preload="metadata"></video>
+              <button class="cvt-play-btn" aria-label="Play/Pause"></button>
+              <button class="cvt-mute-btn" aria-label="Lyd til/fra"></button>
+            </div>
+          </div>
+        </div>
+        <div class="case-feedback" data-lang="en">"Your last content performed really well! I would definitely be interested in another collaboration."<br/><span style="font-size:.75rem;font-style:normal;margin-top:.5rem;display:block;">Brand partner</span></div>
+        <div class="case-feedback" data-lang="da">"Dit sidste content performede virkelig godt! Jeg kunne godt være interesseret i endnu et samarbejde."<br/><span style="font-size:.75rem;font-style:normal;margin-top:.5rem;display:block;">Brand partner</span></div>
+      </div>
+
+      <!-- LUSH Esthetica Case -->
+      <div class="case-card" style="grid-column: 1 / -1;">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.5rem;">
+          <div style="width:40px;height:40px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:white;flex-shrink:0;">
+            <img src="assets/logos/lush-beauty-bar.png" alt="LUSH Esthetica" style="width:180%;height:180%;object-fit:cover;">
+          </div>
+          <p class="case-client" style="margin-bottom:0;">Social Media Management</p>
+        </div>
+        <h3 class="case-title" data-lang="en">From discount-driven bookings to a premium SoMe strategy — without a single sale</h3>
+        <h3 class="case-title" data-lang="da">Fra tilbudsbookinger til en premium SoMe-strategi — uden én eneste tilbudskampagne</h3>
+        <p class="case-description" data-lang="en">LUSH Esthetica went from sporadic posting and price-driven customers to a consistent content strategy that filled their calendar with clients who chose them for quality, not discounts. Three months of strategic organic content — shot in 2–4 hours a month.</p>
+        <p class="case-description" data-lang="da">LUSH Esthetica gik fra sporadiske opslag og prisjagende kunder til en konsekvent content-strategi, der fyldte kalenderen med kunder, der valgte dem på baggrund af kvalitet, ikke rabatter. Tre måneder med strategisk organisk content — optaget på 2–4 timer om måneden.</p>
+        <div class="case-results" data-lang="en">
+          <div class="case-result">+19.9% revenue in 3 months</div>
+          <div class="case-result">+10.6% more bookings</div>
+          <div class="case-result">+8.4% higher revenue per booking</div>
+          <div class="case-result">Fully organisk — no paid ads</div>
+        </div>
+        <div class="case-results" data-lang="da">
+          <div class="case-result">+19,9% omsætning på 3 måneder</div>
+          <div class="case-result">+10,6% flere bookinger</div>
+          <div class="case-result">+8,4% højere omsætning pr. booking</div>
+          <div class="case-result">Fuldt organisk — ingen betalte annoncer</div>
+        </div>
+        <a href="/cases/lush/" style="display:inline-block; margin-top:1.25rem; padding:0.65rem 1.4rem; background:var(--accent,#af8869); color:white; border-radius:6px; font-family:var(--font-sans); font-size:0.82rem; font-weight:500; letter-spacing:0.06em; text-decoration:none; text-transform:uppercase; transition:opacity .2s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'" data-lang="en">Read full case study →</a>
+        <a href="/cases/lush/" style="display:inline-block; margin-top:1.25rem; padding:0.65rem 1.4rem; background:var(--accent,#af8869); color:white; border-radius:6px; font-family:var(--font-sans); font-size:0.82rem; font-weight:500; letter-spacing:0.06em; text-decoration:none; text-transform:uppercase; transition:opacity .2s;" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'" data-lang="da">Læs hele casen →</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ── TESTIMONIALS ──────────────────────────────────── -->
+<div id="testimonials">
+  <div class="section fade">
+    <p class="section-label" data-lang="en">Client feedback</p>
+    <p class="section-label" data-lang="da">Fra mine kunder</p>
+    <h2 class="section-heading" data-lang="en">What brands <em>say</em></h2>
+    <h2 class="section-heading" data-lang="da">Hvad brands <em>siger</em></h2>
+    <div class="testimonials-grid">
+
+      <div class="tcard">
+        <p class="tcard-quote" data-lang="en">"Working with Isabella has been far beyond the ordinary. She has been extremely professional, fast and efficient, without compromising the quality of the content she delivered. There is no doubt that she has a strong understanding of what works on different platforms, and she manages to deliver exactly that."</p>
+        <p class="tcard-quote" data-lang="da">"Samarbejdet med Isabella har været langt ud over det sædvanlige. Hun har været yderst professionel, hurtig og effektiv – men uden at gå på kompromis med kvaliteten af det content, hun har leveret. Man er slet ikke i tvivl om, at hun har en stærk forståelse for, hvad der virker på de forskellige platforme, og hun formår at levere netop dette."</p>
+        <p style="font-family: var(--font-sans); font-size: .78rem; color: var(--muted); margin-top: 1.25rem; letter-spacing: 0.04em;">Ida, EK</p>
+      </div>
+
+      <div class="tcard">
+        <p class="tcard-quote" data-lang="en">"I am simply so grateful for our collaboration, the input you bring to meetings, your analyses, your work. You steer everything to completion with unparalleled precision, gets things done, and despite my delays, you still make it all work."</p>
+        <p class="tcard-quote" data-lang="da">"Jeg er simpelthen så taknemlig, for vores samarbejde, de input du kommer med på møderne, dine analyser, dit arbejde. Du styre det hele i mål med en præcision uden sidestykke, får opgaverne løst, og tiltrods for mine forsinkelser får du alligevel det hele til at spille."</p>
+        <p style="font-family: var(--font-sans); font-size: .78rem; color: var(--muted); margin-top: 1.25rem; letter-spacing: 0.04em;">Mads, Balanceret Sundhed</p>
+      </div>
+
+      <div class="tcard tcard-short">
+        <p class="tcard-quote" data-lang="en">"Your videos helped sell out the entire collection! They performed incredibly well, and I would definitely love to collaborate again."</p>
+        <p class="tcard-quote" data-lang="da">"Dine videoer har været med til at gøre sortimentet udsolgt! Så de har performet sindsygt godt, og jeg vil klart gerne samarbejde igen."</p>
+        <p style="font-family: var(--font-sans); font-size: .78rem; color: var(--muted); margin-top: 1rem; letter-spacing: 0.04em;">Maria, Lilja Nordic</p>
+      </div>
+
+      <div class="tcard tcard-short">
+        <p class="tcard-quote" data-lang="en">"Great work! You sound credible and very natural in speech - super cool! And it works really well with the different clips you recorded!"</p>
+        <p class="tcard-quote" data-lang="da">"Super godt arbejde! Du lyder troværdig og med meget naturlig tale - super fedt! Og fungerer rigtig godt med de forskellige klip, du har optaget!"</p>
+        <p style="font-family: var(--font-sans); font-size: .78rem; color: var(--muted); margin-top: 1rem; letter-spacing: 0.04em;">Peter, Skatteguiden</p>
+      </div>
+
+      <div class="tcard tcard-short">
+        <p class="tcard-quote">"Thank you once again for the video! Amazing work!"</p>
+        <p style="font-family: var(--font-sans); font-size: .78rem; color: var(--muted); margin-top: 1rem; letter-spacing: 0.04em;">Andres, Alice.tech</p>
+      </div>
+
+      <div class="tcard tcard-short">
+        <p class="tcard-quote" data-lang="en">"Isabella, for heaven's sake, how beautiful this is!"</p>
+        <p class="tcard-quote" data-lang="da">"Isabella for pokker, hvor er det fint!"</p>
+        <p style="font-family: var(--font-sans); font-size: .78rem; color: var(--muted); margin-top: 1rem; letter-spacing: 0.04em;">Lea, CEWE</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ── PHOTOS ─────────────────────────────────────────── -->
+<div id="photos">
+  <div class="section fade" style="text-align:center;">
+    <p class="section-label" data-lang="en">UGC Photos</p>
+    <p class="section-label" data-lang="da">UGC Billeder</p>
+    <h2 class="section-heading" data-lang="en">Lifestyle <em>photography</em></h2>
+    <h2 class="section-heading" data-lang="da">Produkter <em>i brug</em></h2>
+    <p class="section-body" style="margin:0 auto 2rem; max-width:560px;" data-lang="en">Images that show your product the way it's actually used. Natural lifestyle photography created for social media, ads, and websites. Focused on real moments, authenticity, and content that feels like a natural part of everyday life.</p>
+    <p class="section-body" style="margin:0 auto 2rem; max-width:560px;" data-lang="da">Billeder, der viser dit produkt, som det faktisk bliver brugt. Naturlige lifestyle-billeder skabt til sociale medier, annoncer og hjemmesider. Fokus på ægte øjeblikke, troværdighed og indhold, der føles som en naturlig del af kundens hverdag.</p>
+
+    <div class="photo-grid">
+      <div class="photo-card"><img src="assets/25.png" alt="UGC lifestyle photo" loading="lazy" /></div>
+      <div class="photo-card"><img src="assets/26.png" alt="UGC lifestyle photo" loading="lazy" /></div>
+      <div class="photo-card"><img src="assets/27.png" alt="UGC lifestyle photo" loading="lazy" /></div>
+      <div class="photo-card"><img src="assets/28.png" alt="UGC lifestyle photo" loading="lazy" /></div>
+      <div class="photo-card"><img src="assets/29.png" alt="UGC lifestyle photo" loading="lazy" /></div>
+      <div class="photo-card"><img src="assets/IMG_8575.jpg" alt="UGC lifestyle photo" loading="lazy" /></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ── WHY ME ──────────────────────────────────────────── -->
+<div id="why">
+  <div class="inner">
+    <div class="why-grid fade">
+
+      <!-- Left: heading + image -->
+      <div>
+        <div data-lang="en">
+          <p class="section-label">Why me?</p>
+          <h2 class="section-heading">Why brands<br/><em>work with me</em></h2>
+        </div>
+        <div data-lang="da">
+          <p class="section-label">Hvorfor mig?</p>
+          <h2 class="section-heading">Mere end<br/><em>en creator</em></h2>
+        </div>
+        <div class="why-image-wrap" style="margin-top: 10%; transform: scale(1.02); transform-origin: top left;">
+          <img src="assets/Design uden navn.png" alt="Isabella Lauritsen" />
+        </div>
+      </div>
+
+      <!-- Right: body text aligned with image -->
+      <!-- EN -->
+      <div data-lang="en" style="padding-top: calc(var(--t-label) + 1.1rem + var(--t-heading)*1.15 + 1.1rem + 20%);">
+        <p class="section-body">Before becoming a creator, I spent years competing at elite level in sport. Performance was everything.<br/><br/>Today, I bring that same mindset to content creation. Every video, image, and concept is created with one goal in mind: helping brands connect with people and drive results.</p>
+        <div class="why-reasons" style="margin-top:1.75rem;">
+          <div class="why-reason">
+            <div class="why-reason-title">Creator + Strategist</div>
+            <p class="why-reason-body">I don't just create content. As a marketing student and social media manager, I understand how content fits into a bigger brand strategy.</p>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-title">Built for performance</div>
+            <p class="why-reason-body">From organic content to paid ads, every piece of content is created with audience behaviour and platform dynamics in mind.</p>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-title">Long-term partnerships</div>
+            <p class="why-reason-body">More than 85% of my clients return for additional projects, resulting in long-term collaborations built on trust and results.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DA -->
+      <div data-lang="da" style="padding-top: calc(var(--t-label) + 1.1rem + var(--t-heading)*1.15 + 1.1rem + 20%);">
+        <p class="section-body">Før jeg begyndte at lave content, brugte jeg størstedelen af mit liv på elitesport. Der lærte jeg noget ret simpelt: Resultater kommer sjældent af held. De kommer af at forstå, hvad der virker, blive ved med at justere og gøre arbejdet ordentligt.<br/><br/>Den tilgang tager jeg med ind i mit arbejde i dag. For mig handler UGC ikke bare om at lave flotte videoer. Det handler om at forstå mennesker, fortælle historier og skabe indhold, som føles naturligt for dem, der ser det.</p>
+        <div class="why-reasons" style="margin-top:1.75rem;">
+          <div class="why-reason">
+            <div class="why-reason-title">Creator med strategisk forståelse</div>
+            <p class="why-reason-body">Jeg læser marketing og arbejder samtidig som social media manager. Derfor tænker jeg ikke kun på, hvordan content skal se ud, men også på hvorfor det skal laves, hvem det skal ramme, og hvordan det passer ind i den større strategi.</p>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-title">Indhold med et formål</div>
+            <p class="why-reason-body">Uanset om indholdet skal bruges organisk eller til annoncering, er målet det samme: At skabe noget, som folk faktisk stopper op ved.</p>
+          </div>
+          <div class="why-reason">
+            <div class="why-reason-title">Langvarige samarbejder</div>
+            <p class="why-reason-body">Mere end 85% af mine kunder vender tilbage. Det ser jeg som det største kvalitetsstempel. For når et brand vælger at samarbejde igen, handler det ikke kun om indholdet, det handler også om tillid, kommunikation og et samarbejde, der fungerer.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ── WORK WITH ME ──────────────────────────────────── -->
+<div id="work">
+  <div class="section fade">
+
+    <!-- EN -->
+    <div data-lang="en">
+      <div class="process-intro">
+        <p class="section-label">Work with me</p>
+        <h2 class="section-heading">How we <em>collaborate</em></h2>
+        <p class="section-body">Every brand I work with gets content built around their world, their audience, and what they actually want to say. No templates, just a real creative partnership.</p>
+      </div>
+      <div class="process-steps-row">
+        <div class="process-step">
+          <div class="step-num-wrap"><span class="step-num">01</span><svg class="step-circle" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34"/></svg></div>
+          <div class="step-title">We talk</div>
+          <p class="step-body">First, a conversation about your brand, your goals, and who you're trying to reach. This is where the work actually starts.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num-wrap"><span class="step-num">02</span><svg class="step-circle" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34"/></svg></div>
+          <div class="step-title">I create</div>
+          <p class="step-body">I handle scripting, filming, and editing. You get content that feels native to the platform and true to your brand. Authentic is the whole point.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num-wrap"><span class="step-num">03</span><svg class="step-circle" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34"/></svg></div>
+          <div class="step-title">You use it</div>
+          <p class="step-body">Ready-to-use content for paid channels, organic feed, or both. Full usage rights included. Long-term partnerships available when the fit is right.</p>
+        </div>
+      </div>
+      <div class="process-bottom">
+        <div class="work-quote">
+          <p>"I work best with brands that care about the long game, building real relationships with their audience. Not just chasing views."</p>
+          <p class="work-quote-name">Isabella Lauritsen</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DA -->
+    <div data-lang="da">
+      <div class="process-intro">
+        <p class="section-label">Sådan foregår et samarbejde</p>
+        <h2 class="section-heading">Sådan arbejder vi <em>sammen</em></h2>
+        <p class="section-body">Jeg tror på, at det bedste content kommer, når man forstår brandet bag. Derfor starter alle samarbejder med en snak om jeres mål, målgruppe og det, I gerne vil opnå. Derfra tager jeg hånd om resten, fra idé til færdigt indhold.</p>
+      </div>
+      <div class="process-steps-row">
+        <div class="process-step">
+          <div class="step-num-wrap"><span class="step-num">01</span><svg class="step-circle" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34"/></svg></div>
+          <div class="step-title">Vi tager en snak</div>
+          <p class="step-body">Først lærer jeg jer og jeres brand at kende. Hvem vil I gerne nå? Hvad skal indholdet opnå? Og hvordan sikrer vi, at det føles som jer?</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num-wrap"><span class="step-num">02</span><svg class="step-circle" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34"/></svg></div>
+          <div class="step-title">Jeg skaber indholdet</div>
+          <p class="step-body">Når vi er enige om retningen, står jeg for idéudvikling, filming og redigering. I får indhold, der føles naturligt på platformen og tro mod jeres brand.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num-wrap"><span class="step-num">03</span><svg class="step-circle" viewBox="0 0 72 72"><circle cx="36" cy="36" r="34"/></svg></div>
+          <div class="step-title">Klar til brug</div>
+          <p class="step-body">Når indholdet er godkendt, modtager I det klar til annoncer, sociale medier eller begge dele. Nemt, overskueligt og klar til at blive sat i spil.</p>
+        </div>
+      </div>
+      <div class="process-bottom">
+        <div class="work-quote">
+          <p>"Jeg arbejder bedst med brands, der tænker langsigtet og ønsker at opbygge ægte relationer til deres målgruppe. Ikke bare jage visninger."</p>
+          <p class="work-quote-name">Isabella Lauritsen</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider-full"></div>
+
+<!-- ── CONTACT ────────────────────────────────────────── -->
+<div id="contact">
+  <div class="section fade" style="text-align:center;">
+
+    <!-- EN -->
+    <div data-lang="en">
+      <p class="section-label">Contact</p>
+      <h2 class="section-heading">Let's find the right<br/><em>story for your brand</em></h2>
+      <p class="section-body" style="margin:0 auto 0.75rem; max-width:980px;">The best content doesn't start with a camera. It starts with understanding your audience, your goals, and what makes your brand different. If you'd like to explore what that could look like for your brand, I'd love to hear from you.</p>
+    </div>
+    <!-- DA -->
+    <div data-lang="da">
+      <p class="section-label">Kontakt</p>
+      <h2 class="section-heading">Lad os finde den rette<br/><em>vinkel til dit brand</em></h2>
+      <p class="section-body" style="margin:0 auto 0.75rem; max-width:980px;">Ingen brands er ens, og derfor bør content heller ikke være det. Send mig en besked, så tager vi en snak om jeres mål, målgruppe og hvordan vi kan skabe indhold, der passer til netop jer.</p>
+    </div>
+
+    <a href="mailto:contact@isocials.dk" class="contact-email">contact@isocials.dk</a>
+
+    <div class="contact-video-wrap">
+      <video src="assets/videos/isabella-work.mp4" autoplay muted loop playsinline preload="auto"></video>
+    </div>
+
+    <div class="contact-socials">
+      <a href="https://www.tiktok.com/@someby_isabellalauritsen" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.instagram.com/i.socials_marketing" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/isabella-lauritsen-a47253332/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── FOOTER ─────────────────────────────────────────── -->
+<footer>
+  <span class="footer-copy">© 2026 iSocials · Isabella Lauritsen</span>
+  <span class="footer-brand">isocials.dk</span>
+</footer>
+
+<!-- ── SCRIPTS ────────────────────────────────────────── -->
+<script>
+  // Language
+  function setLang(lang) {
+    document.body.classList.toggle('lang-da', lang === 'da');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-da').classList.toggle('active', lang === 'da');
+    localStorage.setItem('isocials-lang', lang);
+  }
+  const saved = localStorage.getItem('isocials-lang');
+  if (saved) setLang(saved);
+
+  // Nav scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', scrollY > 40));
+
+  // Fade in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+
+  // Staggered testimonial card animations
+  const tcardObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        tcardObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.tcard').forEach((card, i) => {
+    const col = i % 2;
+    card.style.transitionDelay = `${i * 0.1}s`;
+    card.style.transform = col === 0
+      ? 'translateY(28px) translateX(-12px)'
+      : 'translateY(28px) translateX(12px)';
+    tcardObserver.observe(card);
+    card.addEventListener('transitionend', () => {
+      if (card.classList.contains('visible')) {
+        card.style.transform = '';
+        card.style.transitionDelay = '0s';
+      }
+    }, { once: true });
+  });
+
+
+  // Process step circles — draw in sequence
+  const processObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.step-circle').forEach((circle, i) => {
+          setTimeout(() => circle.classList.add('drawn'), i * 450);
+        });
+        processObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.35 });
+  document.querySelectorAll('.process-steps-row').forEach(el => processObserver.observe(el));
+
+
+  // Why-me image slide-in
+  const whyImgObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); whyImgObserver.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.why-image-wrap').forEach(el => whyImgObserver.observe(el));
+
+  // Video play / pause / mute
+  const PLAY_SVG  = `<svg viewBox="0 0 24 24" width="20" height="20" style="margin-left:3px"><polygon points="6,4 20,12 6,20" fill="var(--dark)"/></svg>`;
+  const PAUSE_SVG = `<svg viewBox="0 0 24 24" width="20" height="20"><rect x="5" y="4" width="4" height="16" fill="var(--dark)"/><rect x="15" y="4" width="4" height="16" fill="var(--dark)"/></svg>`;
+  const MUTE_SVG  = `<svg viewBox="0 0 24 24" width="15" height="15" stroke="white" fill="none" stroke-width="2" stroke-linecap="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19" fill="white" stroke="none"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>`;
+  const SOUND_SVG = `<svg viewBox="0 0 24 24" width="15" height="15" stroke="white" fill="none" stroke-width="2" stroke-linecap="round"><polygon points="11,5 6,9 2,9 2,15 6,15 11,19" fill="white" stroke="none"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
+
+  document.querySelectorAll('.video-card').forEach(card => {
+    const video    = card.querySelector('video');
+    const playBtn  = card.querySelector('.video-play-btn');
+    const muteBtn  = card.querySelector('.video-mute-btn');
+    if (!video || !playBtn) return;
+
+    playBtn.innerHTML = PLAY_SVG;
+    if (muteBtn) muteBtn.innerHTML = MUTE_SVG;
+
+    playBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (video.paused) {
+        video.play().then(() => {
+          card.classList.add('playing');
+          playBtn.innerHTML = PAUSE_SVG;
+        }).catch(() => {});
+      } else {
+        video.pause();
+        card.classList.remove('playing');
+        playBtn.innerHTML = PLAY_SVG;
+      }
+    });
+
+    if (muteBtn) {
+      muteBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        muteBtn.innerHTML = video.muted ? MUTE_SVG : SOUND_SVG;
+      });
+    }
+  });
+
+  // Case study video controls
+  document.querySelectorAll('.cvt-live').forEach(wrap => {
+    const video   = wrap.querySelector('video');
+    const playBtn = wrap.querySelector('.cvt-play-btn');
+    const muteBtn = wrap.querySelector('.cvt-mute-btn');
+    if (!video || !playBtn) return;
+    playBtn.innerHTML = PLAY_SVG;
+    if (muteBtn) muteBtn.innerHTML = MUTE_SVG;
+    playBtn.addEventListener('click', e => {
+      e.stopPropagation();
+      if (video.paused) {
+        video.play().then(() => { wrap.classList.add('playing'); playBtn.innerHTML = PAUSE_SVG; }).catch(()=>{});
+      } else {
+        video.pause(); wrap.classList.remove('playing'); playBtn.innerHTML = PLAY_SVG;
+      }
+    });
+    if (muteBtn) {
+      muteBtn.addEventListener('click', e => {
+        e.stopPropagation();
+        video.muted = !video.muted;
+        muteBtn.innerHTML = video.muted ? MUTE_SVG : SOUND_SVG;
+      });
+    }
+    video.addEventListener('play', () => { wrap.classList.add('playing'); playBtn.innerHTML = PAUSE_SVG; });
+    video.addEventListener('pause', () => { wrap.classList.remove('playing'); playBtn.innerHTML = PLAY_SVG; });
+  });
+
+  // Animated rings
+  const circumference = 2 * Math.PI * 35; // r=35 → ~219.9
+  const ringObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const wrap = e.target;
+      const fg = wrap.querySelector('.ring-fg');
+      const pct = parseFloat(fg.dataset.pct) / 100;
+      // Set full circle, then animate to pct
+      fg.style.strokeDasharray = circumference;
+      fg.style.strokeDashoffset = circumference;
+      // Force reflow so transition fires
+      fg.getBoundingClientRect();
+      fg.style.strokeDashoffset = circumference * (1 - pct);
+      ringObserver.unobserve(wrap);
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.retention-ring-wrap').forEach(el => ringObserver.observe(el));
+
+  // Force autoplay for hero and contact videos (mobile Safari fix)
+  function tryAutoplay() {
+    document.querySelectorAll('#hero video, #contact video').forEach(v => {
+      v.muted = true;
+      v.play().catch(() => {});
+    });
+  }
+  tryAutoplay();
+  window.addEventListener('load', tryAutoplay);
+  document.addEventListener('touchstart', tryAutoplay, { once: true });
+</script>
+
+</body>
+</html>
