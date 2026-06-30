@@ -1,0 +1,5 @@
+*.mov
+!cases/lush/assets/*.mov
+.DS_Store
+**/.DS_Store
+*.git
