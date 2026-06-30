@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study · LUSH Beauty Klinik · Isabella Lauritsen · isocials.dk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #f0ede7;
+      --white:   #FFFFFF;
+      --ink:     #1A1714;
+      --muted:   #7A7470;
+      --border:  #E2DDD8;
+      --accent:  #af8869;
+      --light:   #f0ede7;
+      --max:     1100px;
+      --serif:   'DM Serif Display', Georgia, serif;
+      --sans:    'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: #FAF8F5;
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(250,248,245,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .nav-left { display: flex; align-items: center; gap: 20px; }
+    .nav-logo { font-family: var(--serif); font-size: 17px; color: var(--ink); text-decoration: none; }
+    .nav-back { font-size: 12px; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; border-left: 1px solid var(--border); padding-left: 20px; }
+    .nav-back:hover { color: var(--ink); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 12px; font-weight: 500; color: var(--muted); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta {
+      font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--white); background: var(--ink); text-decoration: none;
+      padding: 10px 20px; border-radius: 2px; transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.75; }
+
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 40px; }
+    section { padding: 96px 0; }
+    section + section { border-top: 1px solid var(--border); }
+
+    .label {
+      font-size: 14px; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: block;
+    }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.15; }
+    h1 { font-size: clamp(34px, 4.8vw, 64px); }
+    h2 { font-size: clamp(26px, 3vw, 40px); }
+    h3 { font-size: 19px; }
+
+    p { color: var(--ink); }
+    p + p { margin-top: 16px; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+
+    #hero { padding: 110px 0 88px; border-top: none; }
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--light); border-radius: 100px;
+      padding: 6px 16px 6px 6px; margin-bottom: 40px;
+    }
+    .hero-kicker-dot { width: 22px; height: 22px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+    .hero-kicker span { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); }
+    .hero-layout { display: grid; grid-template-columns: 1fr 289px; gap: 56px; align-items: center; margin-bottom: 56px; }
+    #hero h1 { max-width: 800px; margin-bottom: 24px; }
+    #hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 17px; color: var(--muted); max-width: 620px; line-height: 1.7; margin-bottom: 0; }
+
+    .metrics-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 3px; overflow: hidden;
+    }
+    .metric-cell { background: var(--white); padding: 40px 36px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+    .metric-ring-wrap { position: relative; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .metric-ring-wrap svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; overflow: visible; }
+    .ring-circle { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; }
+    .metric-number { font-family: var(--serif); font-size: clamp(36px, 4vw, 52px); line-height: 1; color: var(--ink); display: block; position: relative; z-index: 1; padding: 12px 8px; }
+    .metric-label { font-size: 13px; font-weight: 500; color: var(--muted); display: block; }
+
+    .dark { background: var(--ink); }
+    .dark .label { color: var(--accent); }
+    .dark h2 { color: var(--white); }
+    .dark p { color: rgba(255,255,255,0.65); }
+
+    .problem-cards {
+      margin-top: 56px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    }
+    .problem-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent);
+      border-radius: 3px; padding: 32px 28px;
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .problem-card.visible { opacity: 1; transform: translateY(0); }
+    .problem-card-num { font-family: var(--serif); font-size: 28px; color: var(--border); line-height: 1; margin-bottom: 14px; }
+    .problem-card h3 { color: var(--ink); font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.01em; margin-bottom: 8px; }
+    .problem-card p { font-size: 13px; color: var(--muted); }
+
+    .kadence-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .kadence-card { border: 1px solid var(--border); border-radius: 3px; padding: 28px 32px; background: var(--white); }
+    .kadence-card .label { display: block; margin-bottom: 14px; }
+    .kadence-row { display: flex; gap: 24px; margin-bottom: 10px; }
+    .kadence-row:last-child { margin-bottom: 0; }
+    .kadence-pill { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 500; color: var(--ink); }
+    .kadence-pill span { display: inline-block; background: var(--accent); color: var(--white); font-size: 11px; font-weight: 700; letter-spacing: 0.04em; padding: 3px 9px; border-radius: 100px; }
+    .kadence-note { font-size: 12px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+    .content-types { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .content-type-pill { background: var(--cream); border-radius: 3px; padding: 10px 14px; font-size: 12px; color: var(--ink); font-weight: 500; line-height: 1.4; }
+    .content-type-pill em { display: block; font-style: normal; font-size: 11px; color: var(--muted); margin-top: 2px; font-weight: 400; }
+
+    #maal { background: var(--light); }
+    #maal h2 { max-width: 540px; }
+
+    .video-pair-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .two-col-media { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .two-col-media .col-text h2 { margin-bottom: 20px; }
+    .two-col-media .col-text p + p { margin-top: 14px; }
+
+    .principper { margin-top: 56px; display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); border-radius: 3px; overflow: hidden; }
+    .princip { display: grid; grid-template-columns: 56px 1fr; gap: 32px; padding: 36px 40px; border-bottom: 1px solid var(--border); background: var(--white); align-items: center; }
+    .princip:last-child { border-bottom: none; }
+    .princip-num { font-family: var(--serif); font-size: 20px; color: var(--accent); letter-spacing: 0.06em; display: flex; align-items: center; line-height: 1; }
+    .princip h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; margin-bottom: 8px; display: inline-block; position: relative; }
+    .princip h3::after { content: ''; position: absolute; left: 0; bottom: -2px; height: 2px; width: 100%; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 1.0s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .princip.underline-visible h3::after { transform: scaleX(1); }
+    .princip p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    .rolle-box { margin-top: 56px; background: var(--white); border: 1px solid var(--border); border-radius: 3px; padding: 40px 48px; }
+    .rolle-grid { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 40px; }
+    .rolle-item { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; color: var(--ink); opacity: 0; transform: translateY(10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+    .rolle-item.visible { opacity: 1; transform: translateY(0); }
+    .rolle-check { width: 20px; height: 20px; border-radius: 50%; background: var(--accent); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .rolle-check svg { width: 9px; height: 9px; stroke-dasharray: 12; stroke-dashoffset: 12; transition: stroke-dashoffset 0.3s ease 0.2s; }
+    .rolle-item.visible .rolle-check svg { stroke-dashoffset: 0; }
+    .rolle-note { margin-top: 32px; padding: 16px 20px; background: var(--light); border-radius: 3px; font-size: 14px; color: var(--ink); line-height: 1.6; }
+
+    .results-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .result-card { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--accent); border-radius: 3px; padding: 36px 28px; opacity: 0; transform: translateY(24px); transition: opacity 1.2s ease, transform 1.2s ease; }
+    .result-card.visible { opacity: 1; transform: translateY(0); }
+    .result-number { font-family: var(--serif); font-size: clamp(38px, 4vw, 52px); line-height: 1; color: var(--ink); display: block; margin-bottom: 10px; }
+    .result-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+    .result-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+    .insight-box { margin-top: 20px; background: var(--accent); border-radius: 3px; padding: 40px 48px; }
+    .insight-box p { font-family: var(--serif); font-size: clamp(18px, 2vw, 25px); line-height: 1.5; color: var(--white); max-width: 720px; }
+    .insight-box p em { font-style: italic; color: var(--ink); }
+
+    .period-divider { margin-top: 28px; display: flex; align-items: center; gap: 16px; }
+    .period-line { flex: 1; height: 1px; background: var(--border); }
+    .period-text { font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
+
+    #konklusion { background: var(--light); }
+    .konklusion-layout { display: grid; grid-template-columns: 1fr 200px; gap: 56px; align-items: center; }
+    #konklusion h2 { white-space: nowrap; font-size: clamp(18px, 2.4vw, 32px); margin-bottom: 28px; }
+    .konklusion-img { width: 200px; aspect-ratio: 3/4; border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+    .konklusion-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 3px; }
+
+    #testimonial { background: var(--light); }
+
+    #cta { background: var(--white); border-top: 1px solid var(--border); }
+    #cta .label { color: var(--accent); }
+    #cta h2 { color: var(--accent); max-width: 600px; margin: 0 auto 16px; }
+    #cta .sub { color: var(--muted); font-size: 16px; max-width: 800px; margin: 0 auto 48px; line-height: 1.7; }
+    .cta-intro { text-align: center; max-width: 800px; margin: 0 auto 48px; }
+    .cta-box { background: var(--cream); border: 1px solid var(--border); border-radius: 3px; padding: 40px 48px; display: grid; grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; max-width: 860px; margin: 0 auto; }
+    .cta-box h3 { color: var(--ink); font-family: var(--sans); font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+    .cta-box p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+    .cta-avatar { width: 88px; height: 88px; border-radius: 50%; border: 2px solid var(--border); overflow: hidden; flex-shrink: 0; background: var(--white); }
+    .cta-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .btn { display: inline-block; background: var(--ink); color: var(--white); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 16px 32px; border-radius: 2px; text-decoration: none; white-space: nowrap; transition: opacity 0.2s, transform 0.15s; }
+    .btn:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cta-note { margin-top: 20px; font-size: 13px; color: var(--muted); text-align: center; }
+
+    footer { padding: 24px 40px; background: var(--ink); border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; align-items: center; }
+    footer a { font-size: 12px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: rgba(255,255,255,0.7); }
+    footer span { font-size: 12px; color: rgba(255,255,255,0.2); }
+
+    @media (max-width: 860px) {
+      .container { padding: 0 20px; }
+      nav { padding: 14px 20px; flex-wrap: wrap; gap: 12px; }
+      .nav-links { display: none; }
+      .nav-back { display: none; }
+      section { padding: 56px 0; }
+      .hero-layout { grid-template-columns: 1fr; gap: 32px; }
+      .metrics-strip { grid-template-columns: 1fr; }
+      .metric-cell { padding: 28px 24px; }
+      .two-col, .two-col-media, .video-pair-row { grid-template-columns: 1fr; gap: 28px; }
+      .problem-cards { grid-template-columns: 1fr; }
+      .rolle-grid { grid-template-columns: 1fr 1fr; }
+      .rolle-box { padding: 28px 20px; }
+      .kadence-grid { grid-template-columns: 1fr; }
+      .results-grid { grid-template-columns: 1fr; }
+      .insight-box { padding: 28px 24px; }
+      .insight-box p { font-size: 16px; }
+      .konklusion-layout { grid-template-columns: 1fr; gap: 28px; }
+      .konklusion-img { width: 140px; margin: 0 auto; }
+      .cta-box { grid-template-columns: 1fr; gap: 20px; text-align: center; padding: 28px 24px; }
+      .cta-avatar { margin: 0 auto; }
+      .btn { width: 100%; text-align: center; display: block; }
+      .princip { grid-template-columns: 44px 1fr; gap: 16px; }
+      footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <a class="nav-logo" href="https://isocials.dk">isocials.dk</a>
+    <a class="nav-back" href="https://isocials.dk">← Tilbage til portfolio</a>
+  </div>
+  <div class="nav-links">
+    <a href="#kunden">Om kunden</a>
+    <a href="#udfordringen">Udfordringen</a>
+    <a href="#metoden">Metoden</a>
+    <a href="#rolle">Min rolle</a>
+    <a href="#resultater">Resultater</a>
+    <a href="#testimonial">Testimonial</a>
+    <a href="#cta">Kontakt</a>
+  </div>
+  <a class="nav-cta" href="mailto:contact@isocials.dk?subject=Forespørgsel%20om%20Social%20Media%20Management">Skriv til mig her</a>
+</nav>
+
+
+<section id="hero">
+  <div class="container">
+    <div class="hero-layout">
+      <div>
+        <div class="hero-kicker" style="margin-left:-1%;">
+          <span class="hero-kicker-dot"></span>
+          <span>Case Study · Social Media Management</span>
+        </div>
+        <p style="font-size:12px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-bottom:32px;margin-top:-24px;">LUSH Beauty Bar &amp; LUSH Esthetica</p>
+        <h1>Fra tilbudsjægere til<br /><em>kvalitetsbevidste kunder</em></h1>
+        <p class="hero-sub">Tre måneders strategisk content gav flere bookinger, højere omsætning og mere værdifulde kunder, uden én eneste tilbudskampagne.</p>
+      </div>
+      <img src="assets/IMG_7789-kopi.jpg" alt="Isabella Lauritsen" style="width:100%;aspect-ratio:3/4;border-radius:3px;object-fit:cover;object-position:top;display:block;">
+    </div>
+    <div class="metrics-strip">
+      <div class="metric-cell">
+        <div class="metric-ring-wrap">
+          <span class="metric-number">+19,9%</span>
+          <svg width="0" height="0" viewBox="0 0 0 0" aria-hidden="true"><ellipse class="ring-circle" cx="0" cy="0" rx="55" ry="30"/></svg>
+        </div>
+        <span class="metric-label">Omsætning</span>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-ring-wrap">
+          <span class="metric-number">+10,6%</span>
+          <svg width="0" height="0" viewBox="0 0 0 0" aria-hidden="true"><ellipse class="ring-circle" cx="0" cy="0" rx="55" ry="30"/></svg>
+        </div>
+        <span class="metric-label">Bookinger</span>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-ring-wrap">
+          <span class="metric-number">+8,4%</span>
+          <svg width="0" height="0" viewBox="0 0 0 0" aria-hidden="true"><ellipse class="ring-circle" cx="0" cy="0" rx="55" ry="30"/></svg>
+        </div>
+        <span class="metric-label">Omsætning pr. booking</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="kunden">
+  <div class="container">
+    <div class="two-col-media">
+      <div class="col-text">
+        <span class="label">Om kunden</span>
+        <h2 style="color: var(--accent); white-space: nowrap; font-size: clamp(18px, 2.4vw, 32px);">LUSH Beauty Bar og LUSH Esthetica</h2>
+        <p>LUSH Beauty Bar og LUSH Esthetica er en one stop beauty shop klinik i København. De tilbyder behandlinger inden for blandt andet laserhårfjerning, PRP, microneedling, tandblegning, bryn og vipper.</p>
+        <p>Klinikken er kendt for høj faglighed, dokumenterede resultater og en personlig oplevelse, hvor kvalitet vægtes højere end hurtige løsninger.</p>
+      </div>
+      <div>
+        <img src="assets/Skærmbillede 2026-02-24 kl. 18.33.08.png" alt="LUSH Esthetica" style="width:85%;aspect-ratio:1/1;border-radius:12px;object-fit:cover;display:block;margin:0 auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="udfordringen">
+  <div class="container">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+      <span class="label">Udfordringen</span>
+      <h2 style="margin-bottom: 24px; white-space: nowrap; font-size: clamp(20px, 2.6vw, 34px);">Kalenderen blev typisk fyldt gennem tilbud</h2>
+      <p style="color: var(--ink);">Som mange andre klinikker stod LUSH med en udfordring:<br/><em style="color: #B85252; display: block; margin: 8px 0;">når kalenderen havde ledige tider, blev løsningen ofte tilbudskampagner.</em>Det skabte bookinger på kort sigt, men tiltrak samtidig kunder, der primært var drevet af pris frem for kvalitet. Samtidig var indholdet på sociale medier sporadisk. Ikke fordi klinikken manglede kompetencer eller resultater, men fordi behandlernes tid naturligt blev brugt på kunderne. Konsekvensen var, at klinikkens ekspertise ikke blev kommunikeret konsekvent nok til at skabe en stabil strøm af de kunder, de helst ville arbejde med.</p>
+    </div>
+    <div class="problem-cards">
+      <div class="problem-card">
+        <div class="problem-card-num">01</div>
+        <h3>Afhængighed af tilbud er svær at bryde</h3>
+        <p>Tilbudskampagner giver hurtige resultater og er derfor svære at stoppe med. Udfordringen var at opbygge en organisk tilstedeværelse stærk nok til at fylde kalenderen uden at konkurrere på pris.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-num">02</div>
+        <h3>Behandlernes tid skaber mest værdi i klinikken</h3>
+        <p>Behandlernes tid er mest værdifuld, når den bruges på kunderne. Derfor blev sociale medier naturligt nedprioriteret i en travl hverdag, hvilket gjorde det svært at skabe den kontinuitet og synlighed, der opbygger tillid over tid.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-card-num">03</div>
+        <h3>Ekspertisen skulle være lige så tydelig online</h3>
+        <p>LUSH leverer behandlinger i høj kvalitet med dokumenterede resultater. Udfordringen var at omsætte den ekspertise til et tydeligt og konsekvent content-univers, der afspejlede klinikkens faglighed og gjorde kvaliteten synlig, allerede inden kunden trådte ind ad døren.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="maal">
+  <div class="container">
+    <div class="two-col-media">
+      <div class="col-text">
+        <span class="label">Målet</span>
+        <h2>Tiltrække de rigtige kunder, som vælger kvalitet og erfaring fremfor tilbud</h2>
+        <p>Målet var ikke bare flere bookinger. Målet var at skabe en mere stabil tilgang af kunder, som valgte klinikken på grund af kvalitet, resultater og ekspertise, ikke på grund af rabatter.</p>
+        <p>Samtidig ønskede vi at øge kendskabet til flere af klinikkens behandlinger og behandlere samt skabe en stærkere relation til følgerne.</p>
+        <p>Dette handlede ikke om at få flere følgere. Det handlede om at få de nuværende og nye til at konvertere. Derfor lå de primære KPI'er ikke i Instagram-statistikken, men i bookingsystemet.</p>
+      </div>
+      <div class="video-pair-row">
+        <video src="assets/Anna fortælling om BB og LE.mov" controls playsinline style="width:100%;aspect-ratio:9/16;border-radius:3px;object-fit:cover;display:block;background:#000;"></video>
+        <video src="assets/POSTET LE video 5 Intro (personale og klinik) (1).mov" controls playsinline style="width:100%;aspect-ratio:9/16;border-radius:3px;object-fit:cover;display:block;background:#000;"></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="metoden">
+  <div class="container">
+    <div style="max-width: 900px;">
+      <span class="label">Hvad var metoden?</span>
+      <h2 style="white-space: nowrap; font-size: clamp(20px, 2.8vw, 36px); margin-bottom: 20px;">Et fast content-system fremfor enkeltstående opslag</h2>
+      <p>I stedet for at fokusere på kampagner og hurtige løsninger byggede vi et struktureret content-system.<br/>Vi lagde en fast strategi for begge klinikkens profiler og arbejdede ud fra tre centrale principper.</p>
+    </div>
+    <div class="principper">
+      <div class="princip">
+        <span class="princip-num">01</span>
+        <div>
+          <h3>Dokumentér resultaterne</h3>
+          <p>Klinikken skaber fantastiske resultater hver eneste dag. Det skulle vises. Derfor blev før/efter-resultater, behandlinger og kundecases en central del af indholdet.</p>
+        </div>
+      </div>
+      <div class="princip">
+        <span class="princip-num">02</span>
+        <div>
+          <h3>Gør ekspertisen synlig</h3>
+          <p>Mange kunder forstår ikke forskellen på behandlinger eller hvorfor kvalitet betyder noget. Derfor producerede vi indhold, der uddannede målgruppen og fremhævede klinikkens faglighed.</p>
+        </div>
+      </div>
+      <div class="princip">
+        <span class="princip-num">03</span>
+        <div>
+          <h3>Skab genkendelse gennem konsistens</h3>
+          <p>I stedet for at poste tilfældigt blev der etableret et fast publiceringsflow, så klinikken konstant var synlig hos potentielle kunder.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="rolle">
+  <div class="container">
+    <div style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
+      <span class="label">Min rolle</span>
+      <h2 style="white-space: nowrap; font-size: clamp(20px, 2.6vw, 34px); margin-bottom: 20px;">Fra strategi til eksekvering</h2>
+      <p style="color: var(--ink);">Målet for mig var at gøre sociale medier til en stabil og organisk vækstkanal, der skabte flere bookinger uden øgede annoncebudgetter eller tilbudskampagner. Samtidig skulle løsningen give ejerne og behandlerne deres tid tilbage, så de kunne fokusere på det, de er bedst til: at skabe gode kundeoplevelser og levere behandlinger i høj kvalitet.</p>
+    </div>
+    <div class="rolle-box">
+      <span class="label" style="margin-bottom:8px;">Som Social Media Manager stod jeg for</span>
+      <div class="rolle-grid">
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contentstrategi</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Contentplanlægning</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Produktion af indhold</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Redigering</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Copywriting</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Publicering</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Inhouse shoot</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Scripting</div>
+        <div class="rolle-item"><div class="rolle-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Idégenerering</div>
+      </div>
+      <div class="rolle-note"><strong>Hele indholdssystemet kører på ét månedligt inhouse shoot på 2–4 timer.</strong> Det er alt den tid personalet skal sætte af i løbet af en hel måned. Strategi, planlægning, redigering, tekster og publicering står jeg for.</div>
+    </div>
+    <div class="kadence-grid">
+      <div class="kadence-card">
+        <span class="label">Posting kalender</span>
+        <p style="font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:10px;">Primær kanal: Instagram</p>
+        <div class="kadence-row"><div class="kadence-pill"><span>Måned 1-2</span> 3 opslag/uge pr. kanal + daglige stories</div></div>
+        <div class="kadence-row"><div class="kadence-pill"><span>Måned 3</span> 2 opslag/uge pr. kanal + stories 3x/uge</div></div>
+        <p style="font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-top:18px;margin-bottom:10px;">Sekundær kanal: TikTok</p>
+        <div class="kadence-row"><div class="kadence-pill"><span>Løbende</span> 3-4 opslag/uge</div></div>
+        <p class="kadence-note" style="margin-top:14px;">Posting-aktiviteten er blevet justeret løbende, med mulighed for at skrue op igen.</p>
+      </div>
+      <div class="kadence-card">
+        <span class="label">Indholdsstrategien bag</span>
+        <div class="content-types">
+          <div class="content-type-pill">Informerende<em>Uddannede følgerne om behandlinger og resultater</em></div>
+          <div class="content-type-pill">Autentisk<em>Viste det virkelige arbejde bag klinikken</em></div>
+          <div class="content-type-pill">Erfaringsbaseret<em>Fremhævede ekspertise og dokumenterede cases</em></div>
+          <div class="content-type-pill">CTA til booking<em>Hvert format ledte naturligt mod en handling</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="resultater">
+  <div class="container">
+    <div style="max-width: 900px;">
+      <span class="label">Resultater · 1. marts til 1. juni 2026</span>
+      <h2 style="white-space: nowrap; font-size: clamp(20px, 2.8vw, 36px); margin-bottom: 20px;">På blot tre måneder skabte indsatsen målbare resultater</h2>
+      <p>Uden én eneste tilbudskampagne. Her er hvad tre måneder med et struktureret content-system kan gøre for en klinik.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-card">
+        <span class="result-number">+19,9%</span>
+        <div class="result-title">Månedlig omsætning</div>
+        <p class="result-desc">Omsætningen steg markant, selvom klinikken stoppede med at bruge tilbud som vækstmotor.</p>
+      </div>
+      <div class="result-card">
+        <span class="result-number">+10,6%</span>
+        <div class="result-title">Flere bookinger</div>
+        <p class="result-desc">Kalenderen blev fyldt mere stabilt gennem to Meta Ads-videoer og organisk synlighed.</p>
+      </div>
+      <div class="result-card">
+        <span class="result-number">+8,4%</span>
+        <div class="result-title">Højere omsætning pr. booking</div>
+        <p class="result-desc">Kunderne brugte i gennemsnit mere pr. besøg, et stærkt tegn på højere kvalitet i kundegrundlaget.</p>
+      </div>
+    </div>
+    <div class="insight-box">
+      <p><span style="white-space: nowrap;">Omsætningen steg markant, selvom klinikken stoppede med tilbud som vækstmotor.</span> <span style="white-space: nowrap;">Det er hvad der sker, når <em>strategi og konsistens erstatter kampagner og tilfældighed.</em></span></p>
+    </div>
+    <div style="margin-top: 28px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+      <span style="font-size: 13px; color: var(--muted);">Se indholdet selv:</span>
+      <a href="https://www.instagram.com/lush.esthetica/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @lush.esthetica
+      </a>
+      <a href="https://www.instagram.com/lushbeautybar_cph/" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        @lushbeautybar_cph
+      </a>
+      <a href="https://www.tiktok.com/@lushbeautybar_cph" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; border: 1px solid var(--border); border-radius: 100px; padding: 7px 16px; transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+        @lushbeautybar_cph
+      </a>
+    </div>
+    <div class="period-divider">
+      <span class="period-line"></span>
+      <span class="period-text">1. marts 2026 til 1. juni 2026 · Tre måneder</span>
+      <span class="period-line"></span>
+    </div>
+  </div>
+</section>
+
+
+<section id="konklusion">
+  <div class="container">
+    <div class="konklusion-layout">
+      <div>
+        <span class="label">Konklusion</span>
+        <h2>Sociale medier handler ikke blot om at poste mere</h2>
+        <p>De fleste klinikker mangler ikke dygtige behandlere. De mangler et system, der gør deres ekspertise synlig.</p>
+        <p>For LUSH handlede væksten ikke om flere tilbud. Den kom af at kommunikere den værdi, de allerede skabte hver eneste dag.</p>
+      </div>
+      <div class="konklusion-img">
+        <img src="assets/Skærmbillede 2026-06-25 kl. 15.06.06.png" alt="Isabella Lauritsen">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="testimonial">
+  <div class="container">
+    <div style="max-width: 680px; margin: 0 auto;">
+      <div style="background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 40px 48px; box-shadow: 0 2px 16px rgba(0,0,0,0.06);">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--border);">
+          <div style="display: flex; align-items: center; gap: 14px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 1px solid var(--border);">
+              <img src="assets/Skærmbillede 2026-02-24 kl. 18.33.08.png" style="width:100%;height:100%;object-fit:cover;transform:scale(1.1);">
+            </div>
+            <div>
+              <p style="font-size: 14px; font-weight: 600; color: var(--ink); margin: 0;">Mary Anna</p>
+              <p style="font-size: 12px; color: var(--muted); margin: 0;">Founder, LUSH Esthetica &amp; LUSH Beauty Bar</p>
+            </div>
+          </div>
+          <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); background: var(--cream); padding: 5px 12px; border-radius: 100px;">Testimonial</span>
+        </div>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.75; margin-bottom: 16px;">Jeg er virkelig glad for samarbejdet med Isabella som min social media manager. Hun har været en kæmpe hjælp med både strategi, struktur og det kreative arbejde bag vores sociale medier. Noget af det, jeg sætter allermest pris på, er, hvor godt hun har forstået vores brand og den retning, vi gerne vil i. Alt indhold føles stadig som os, bare på et langt mere professionelt niveau.</p>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.75; margin-bottom: 16px;">Isabella er også utrolig dygtig til at planlægge og forberede content-dage. Mine piger har normalt været ret camera shy, men med Isa har de virkelig følt sig trygge foran kameraet. Hun har fundet en måde at gøre content-dagene både naturlige og nemme, og det har gjort en kæmpe forskel.</p>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.75; margin-bottom: 16px;">Da vi startede samarbejdet, var vores mål at tiltrække de rigtige kunder. I lang tid havde vi konkurreret for meget på pris, selvom kvaliteten og standarden hos os var langt højere. Isabella lagde hele vores strategi om og hjalp os med at positionere os på en helt anden måde. Den ændring har virkelig kunnet mærkes: både vores omsætning og antallet af bookinger er steget løbende, og sidste måned havde vi faktisk den måned med flest bookinger, vi har haft i de sidste to år.</p>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.75;">Samarbejdet har uden tvivl været en af de bedste investeringer, vi har gjort for vores forretning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="cta">
+  <div class="container">
+    <div class="cta-intro">
+      <span class="label">Kunne det her være din klinik?</span>
+      <h2>Lad os tage en uforpligtende snak</h2>
+      <p class="sub">Hvis du oplever perioder med tomme tider, uregelmæssig contentproduktion eller føler, at dine sociale medier ikke afspejler kvaliteten af dit arbejde, så lad os tage en snak. Jeg arbejder med et begrænset antal kunder ad gangen for at sikre, at strategi, indhold og resultater hænger sammen.</p>
+    </div>
+    <div class="cta-box">
+      <div class="cta-avatar"><img src="assets/IMG_7789-kopi.jpg" alt="Isabella Lauritsen"></div>
+      <div>
+        <h3>Send mig en mail</h3>
+        <p>Så finder vi tid til en uforpligtende samtale og ser på, hvor din klinik står i dag og hvad der skal til for at tiltrække flere af de rigtige kunder.</p>
+      </div>
+      <a class="btn" href="mailto:contact@isocials.dk?subject=Forespørgsel%20om%20Social%20Media%20Management">Skriv til mig</a>
+    </div>
+    <p class="cta-note">contact@isocials.dk · isocials.dk</p>
+  </div>
+</section>
+
+
+<footer>
+  <a href="https://isocials.dk">isocials.dk</a>
+  <span>Case Study · LUSH Beauty Klinik · 2026</span>
+  <a href="https://isocials.dk">Isabella Lauritsen</a>
+</footer>
+
+<script>
+  function sizeRings() {
+    document.querySelectorAll('.metric-ring-wrap').forEach(wrap => {
+      const num = wrap.querySelector('.metric-number');
+      const svg = wrap.querySelector('svg');
+      const el = svg.querySelector('.ring-circle');
+      const w = num.offsetWidth, h = num.offsetHeight;
+      const rx = w / 2 + 22, ry = h / 2 + 14;
+      const perim = Math.round(2 * Math.PI * Math.sqrt((rx * rx + ry * ry) / 2));
+      svg.setAttribute('width', rx * 2 + 10 + 'px');
+      svg.setAttribute('height', ry * 2 + 10 + 'px');
+      svg.setAttribute('viewBox', `${-rx-5} ${-ry-5} ${rx*2+10} ${ry*2+10}`);
+      el.setAttribute('rx', rx); el.setAttribute('ry', ry);
+      el.dataset.perim = perim;
+      el.style.transition = 'none';
+      el.style.strokeDasharray = perim;
+      el.style.strokeDashoffset = perim;
+    });
+  }
+
+  function observeMetrics() {
+    const wraps = document.querySelectorAll('.metric-ring-wrap');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const wrap = entry.target;
+        const index = Array.from(wraps).indexOf(wrap);
+        const el = wrap.querySelector('.ring-circle');
+        setTimeout(() => { requestAnimationFrame(() => { el.style.transition = 'stroke-dashoffset 2.0s cubic-bezier(0.25, 0.8, 0.25, 1)'; el.style.strokeDashoffset = '0'; }); }, index * 260);
+        observer.unobserve(wrap);
+      });
+    }, { threshold: 0.5 });
+    wraps.forEach(w => observer.observe(w));
+  }
+
+  function observeChecklist() {
+    const box = document.querySelector('.rolle-box');
+    if (!box) return;
+    const items = box.querySelectorAll('.rolle-item');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        items.forEach((item, i) => { setTimeout(() => item.classList.add('visible'), i * 150); });
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.3 });
+    observer.observe(box);
+  }
+
+  function observePrincipUnderlines() {
+    const items = document.querySelectorAll('.princip');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const i = Array.from(items).indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('underline-visible'), i * 220);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    items.forEach(item => observer.observe(item));
+  }
+
+  function observeProblemCards() {
+    const cards = document.querySelectorAll('.problem-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const i = Array.from(cards).indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('visible'), i * 180);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  }
+
+  function observeResultCards() {
+    const cards = document.querySelectorAll('.result-card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const i = Array.from(cards).indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('visible'), i * 250);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  }
+
+  window.addEventListener('load', () => { sizeRings(); observeMetrics(); observeChecklist(); observeProblemCards(); observePrincipUnderlines(); observeResultCards(); });
+  window.addEventListener('resize', sizeRings);
+</script>
+
+</body>
+</html>
